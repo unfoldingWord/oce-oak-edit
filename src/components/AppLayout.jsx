@@ -8,7 +8,7 @@ import SimpleEditor from './SimpleEditor'
 import { PrintModal, useUsfmPreviewRenderer } from '@oce-editor-tools/core'
 import { fileOpen } from 'browser-fs-access'
 import { styled, useTheme } from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
+import HideAppBar from './HideAppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -137,7 +137,7 @@ export default function AppLayout() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Paper sx={{ position: 'fixed', top: 0, left: 0, right: 0 }} elevation={3}>
-        <AppBar position="static">
+        <HideAppBar>
           <Toolbar>
             <IconButton
               size="large"
@@ -153,18 +153,17 @@ export default function AppLayout() {
               variant="h6"
               noWrap
               component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }}
             >
               OCE OAK EDIT
             </Typography>
-            <ThemeProvider theme={theme}>
               <IconButton
                 size="large"
                 edge="start"
                 color="inherit"
                 onClick={handleOpen}
                 aria-label="print preview"
-                sx={{ mr: 2 }}
+                sx={{ ml: 'auto' }}
               >
                 <FolderOpenIcon/>
               </IconButton>
@@ -175,11 +174,10 @@ export default function AppLayout() {
                 onClick={handlePrintPreviewClick} 
                 disabled={!enabledPrintPreview}
                 aria-label="print preview"
-                sx={{ mr: 2 }}
+                sx={{ ml: 'auto' }}
               >
                 <PrintIcon/>
               </IconButton>
-            </ThemeProvider>
             {/* <Search>
               <SearchIconWrapper>
                 <SearchIcon />
@@ -190,7 +188,7 @@ export default function AppLayout() {
               />
             </Search> */}
           </Toolbar>
-        </AppBar>
+        </HideAppBar>
         <Drawer
           sx={{
             width: drawerWidth,
