@@ -1,0 +1,52 @@
+{
+  "name": "oce-oak-edit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/lab": "4.0.0-alpha.61",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/lab": "5.0.0-alpha.143",
+    "@mui/material": "^5.14.9",
+    "@mui/styled-engine-sc": "^5.14.9",
+    "@mui/styles": "^5.14.9",
+    "@oce-editor-tools/core": "0.1.17-beta.5",
+    "proskomma-core": "^0.10.1",
+    "epitelete-html": "0.2.21-beta.2",
+    "@tauri-apps/api": "2.0.0-alpha.8",
+    "@tauri-apps/plugin-dialog": "2.0.0-alpha.1",
+    "@tauri-apps/plugin-fs": "2.0.0-alpha.1",
+    "@tauri-apps/plugin-shell": "2.0.0-alpha.1",
+    "@tauri-apps/plugin-window": "2.0.0-alpha.1",
+    "bible-reference-rcl": "^1.2.2",
+    "browser-fs-access": "^0.34.1",
+    "dompurify": "^3.0.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "styled-components": "^6.0.8",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.49.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.4",
+    "@tauri-apps/cli": "^2.0.0-alpha.9",
+    "internal-ip": "^7.0.0"
+  }
+}
