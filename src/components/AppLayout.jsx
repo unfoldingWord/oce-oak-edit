@@ -7,7 +7,7 @@ import markup from '../lib/drawdown'
 import SimpleEditor from './SimpleEditor'
 import { PrintModal, useUsfmPreviewRenderer } from '@oce-editor-tools/core'
 import { fileOpen } from 'browser-fs-access'
-import { styled } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -40,7 +40,17 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }))
 
+const theme = createTheme({
+  palette: {
+    neutral: {
+      main: '#FFFFFF',
+      contrastText: 'black',
+    },
+  },
+})
+
 export default function AppLayout() {
+  const theme = useTheme()
   const [markupHtmlStr, setMarkupHtmlStr] = useState("")
   const [drawerOpen, setDrawerOpen] = React.useState(false)
   const [isOpen,setIsOpen] = useState(false)
@@ -170,6 +180,15 @@ export default function AppLayout() {
                 <PrintIcon/>
               </IconButton>
             </ThemeProvider>
+            {/* <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search> */}
           </Toolbar>
         </AppBar>
         <Drawer
