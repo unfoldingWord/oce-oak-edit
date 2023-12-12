@@ -4,13 +4,14 @@ import { documentDir, extname } from '@tauri-apps/api/path'
 import { readTextFile } from "@tauri-apps/plugin-fs"
 import SimpleEditor from './SimpleEditor'
 // import { fileOpen } from 'browser-fs-access'
-import HideAppBar from './HideAppBar'
+import Header from './Header'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen'
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function AppLayout() {
   const [usfmText, setUsfmText] = useState()
@@ -20,7 +21,6 @@ export default function AppLayout() {
 
   const handleOpen = async () => {
     // Open a selection dialog for directories
-    setLoading(true)
     const selected = await open({
       multiple: false,
       filters: [{
@@ -30,6 +30,7 @@ export default function AppLayout() {
       defaultPath: await documentDir(),
     })
     if (selected !== null) {
+      setLoading(true)
       const _filePath = selected?.path
       setFilePath(_filePath)
       const extStr = await extname(_filePath)
@@ -53,37 +54,29 @@ export default function AppLayout() {
   }
  
   const appBarAndWorkSpace = 
-    <div style={{paddingTop: '100px'}}>
-        { usfmFileLoaded && <SimpleEditor {...editorProps } />}
+    <div>
+      { usfmFileLoaded && <SimpleEditor {...editorProps } />}
     </div>
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Paper sx={{ position: 'fixed', top: 0, left: 0, right: 0 }} elevation={3}>
-        {(!usfmFileLoaded) && (<HideAppBar>
-          <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              OCE OAK EDIT
-            </Typography>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              onClick={handleOpen}
-              aria-label="print preview"
-              sx={{ ml: 'auto' }}
-            >
-              <FolderOpenIcon/>
-            </IconButton>
-          </Toolbar>
-        </HideAppBar>)}
+        {!usfmFileLoaded && !loading && 
+          (<Header 
+            title={"OCE Oak Edit"}
+            onOpenClick={handleOpen}
+          />)}
       </Paper>
-      {(!loading) && appBarAndWorkSpace}
+      {!loading ? appBarAndWorkSpace : (
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            paddingTop: '150px' 
+          }}>
+          <CircularProgress disableShrink/>
+        </Box>
+      )}
       </Box>
   )
 }
