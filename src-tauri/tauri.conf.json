@@ -30,9 +30,9 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "oce-oak-edit",
+        "title": "OCE Oak Edit",
         "width": 800,
-        "height": 600
+        "height": 1000
       }
     ]
   },
