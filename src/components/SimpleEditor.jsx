@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react"
-import { Editor } from '@oce-editor-tools/core'
+import { Editor } from '@oce-editor-tools/mui-core'
 import EpiteleteHtml from "epitelete-html"
 import { usfm2perf } from "../helpers/usfm2perf"
-import { save } from '@tauri-apps/plugin-dialog'
+// import { save } from '@tauri-apps/plugin-dialog'
 import { writeFile } from "@tauri-apps/plugin-fs"
-import { documentDir, join } from '@tauri-apps/api/path'
+// import { documentDir, join } from '@tauri-apps/api/path'
 
 const SaveFile = async (fileName,text) => {
   try {
