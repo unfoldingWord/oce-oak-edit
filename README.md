@@ -61,8 +61,69 @@ These are some of the underlying components:
 ### Built With
 
 - [React.js](https://reactjs.org/)
+- [Tauri](https://tauri.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Running the application
+The code below uses `pnpm` to install the dependencies and run the application. Use any package manager of your choice (`npm`, `yarn`, etc.)
+
+
+### Requirements and Preinstallation
+Based on your system:
+1. Follow the [Rust Installation Guide](https://www.rust-lang.org/tools/install) 
+2. Follow the [Tauri Prerequisite Guide](https://tauri.app/v1/guides/getting-started/prerequisites/#setting-up-linux)
+
+#### Notes for WSL Users
+
+- My environment did not have Rust installed. I had to [install Rust](https://www.rust-lang.org/tools/install) first
+  ```sh
+  curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+  ```
+  - Does this help? cargo install tauri-cli
+- After installing Rust, there were some other prerequisites I needed to install. I followed the [Tauri Prerequisites Guide](https://tauri.app/v1/guides/getting-started/prerequisites/)
+  - HOWEVER! The version of Tauri that this application uses requires a never version of webkit. So, here is the updated list (for Debian based systems):
+  ```sh
+   sudo apt update
+   sudo apt install libwebkit2gtk-4.1-dev \
+   build-essential \
+   curl \
+   wget \
+   file \
+   libssl-dev \
+   libgtk-3-dev \
+   libayatana-appindicator3-dev \
+   librsvg2-dev
+  ```
+
+#### Notes for Windows Users
+In the [Cargo Config File](./src-tauri/.cargo/config.toml), change your target based on your Windows system (32/64, msvc/gnu):
+   ```sh
+   target = "x86_64-pc-windows-msvc"
+   
+   OR
+
+   target = "x86_64-pc-windows-gnu"
+   ```
+
+### Local Development
+1. Clone the repo
+
+   ```sh
+   git clone https://github.com/unfoldingWord/oce-oak-edit.git
+   ```
+
+2. Install packages
+
+   ```sh
+   pnpm install
+   ```
+
+3. Run locally:
+
+   ```sh
+   pnpm tauri dev
+   ```
 
 <!-- ROADMAP -->
 ## Roadmap
