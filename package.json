@@ -1,7 +1,7 @@
 {
   "name": "OCE Oak Edit",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,13 +12,11 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@material-ui/lab": "4.0.0-alpha.61",
     "@mui/icons-material": "^5.14.19",
     "@mui/lab": "5.0.0-alpha.143",
     "@mui/material": "^5.14.20",
     "@mui/styled-engine-sc": "^5.14.12",
-    "@mui/styles": "^5.14.20",
-    "@oce-editor-tools/mui-core": "0.1.27-alpha.1",
+    "@oce-editor-tools/mui-core": "0.1.28",
     "@tauri-apps/api": "2.0.0-alpha.8",
     "@tauri-apps/plugin-dialog": "2.0.0-alpha.1",
     "@tauri-apps/plugin-fs": "2.0.0-alpha.1",

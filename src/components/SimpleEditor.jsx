@@ -57,12 +57,18 @@ function SimpleEditor({
     if (epiteleteHtml) loadUsfm()
   }, [epiteleteHtml])
 
+  const onRenderToolbar = ({ items }) => {
+    const _items = items.filter((item) => item?.key !== "print")
+    return [..._items]
+  }
+
   const editorProps = {
     epiteleteHtml,
     bookId: 'XYZ',
     reference,
     onReferenceSelected,
     onSave,
+    onRenderToolbar,
     verbose,
     ...props,
   }
