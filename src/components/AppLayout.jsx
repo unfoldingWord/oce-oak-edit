@@ -6,11 +6,7 @@ import SimpleEditor from './SimpleEditor'
 // import { fileOpen } from 'browser-fs-access'
 import Header from './Header'
 import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
-import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function AppLayout() {
