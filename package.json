@@ -16,7 +16,7 @@
     "@mui/lab": "5.0.0-alpha.143",
     "@mui/material": "^5.14.20",
     "@mui/styled-engine-sc": "^5.14.12",
-    "@oce-editor-tools/mui-core": "0.1.28",
+    "@oce-editor-tools/mui-core": "0.1.30",
     "@tauri-apps/api": "2.0.0-alpha.8",
     "@tauri-apps/plugin-dialog": "2.0.0-alpha.1",
     "@tauri-apps/plugin-fs": "2.0.0-alpha.1",
